@@ -5,6 +5,7 @@ namespace program;
 
 class MainClass
 {
+        
     public static void Main(string[] args)
     {
         
@@ -22,18 +23,37 @@ class MainClass
                 Console.Write("Enter the sign: ");
                 string sign = Console.ReadLine();
 
-                MathProxy test = new MathProxy();
+                MathProxy proxy = new MathProxy();
                 double res = 0;
                 if (sign == "+")
                 {
-                    res = test.add(firstNumber, secondNumber);
+                    res = proxy.add(firstNumber, secondNumber);
                     Console.WriteLine("{0} {1} {2} = {3}", firstNumber, sign, secondNumber, res);
                 }
                 else if (sign == "-")
                 {
-                    res = test.sub(firstNumber, secondNumber);
+                    res = proxy.sub(firstNumber, secondNumber);
                     Console.WriteLine("{0} {1} {2} = {3}", firstNumber, sign, secondNumber, res);
                 }
+                else if (sign == "*")
+                {
+                    res = proxy.mul(firstNumber, secondNumber);
+                    Console.WriteLine("{0} {1} {2} = {3}", firstNumber, sign, secondNumber, res);
+                }
+                else if (sign == "/")
+                {
+                    res = proxy.div(firstNumber, secondNumber);
+                    Console.WriteLine("{0} {1} {2} = {3}", firstNumber, sign, secondNumber, res);
+                }
+                else if (sign == "^")
+                {
+                    
+                    double firstResult = proxy.root(firstNumber);
+                    double secondResult = proxy.root(secondNumber);
+                    Console.WriteLine("Root of first num: {0}",firstResult);
+                    Console.WriteLine("Root of second num: {0}",secondResult);
+                }
+                
             }
             else if (choise.ToUpper() == "NO")
             {
