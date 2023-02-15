@@ -6,6 +6,5 @@ public interface IMath
     double sub(double f_num, double s_num);
     double mul(double f_num, double s_num);
     double div(double f_num, double s_num);
-
     double root(double number);
 }

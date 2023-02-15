@@ -28,7 +28,14 @@ public class MathProxy : IMath
     
     public double div(double f_num, double s_num)
     {
-        return _math.div(f_num,s_num);
+        try
+        {
+            return _math.div(f_num, s_num);
+        }
+        catch (DivideByZeroException)
+        {
+            return 1111;
+        }
     }
     
     public double root(double number) {
