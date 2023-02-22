@@ -16,13 +16,20 @@ class MainClass
     {
         while (true)
         {
-            Console.WriteLine("Would you like start the program? Write (YES) to confirm or (NO) to stop");
+            Console.WriteLine("Do you want to run the program? Write (YES) to confirm or (NO) to stop");
             string choise = Console.ReadLine();
             if (choise.ToUpper() == "YES")
             {
-                Console.Write("Enter the operation: ");
+                Console.WriteLine("List of operation:");
+                Console.WriteLine("'+' - Addition");
+                Console.WriteLine("'-' - Substract");
+                Console.WriteLine("'*' - Multiply");
+                Console.WriteLine("'/' - Division");
+                Console.WriteLine("'^' - Finding the root");
+                Console.Write("Select the operation: ");
+                
                 string sign = Console.ReadLine();
-                MathProxy proxy = new MathProxy();
+                MathProxy proxy = MathProxy.GetMath();
                 double res = 0;
                 if (sign == "+")
                 {
@@ -79,9 +86,8 @@ class MainClass
                 }
                 else if (sign == "^")
                 {
-                    #region AddOperation
 
-                    Console.Write("Enter the number :");
+                    Console.Write("Enter the number : ");
                     double number = Convert.ToDouble(Console.ReadLine());
                     try
                     {
@@ -96,10 +102,9 @@ class MainClass
                     }
                     catch (CheckingOperand ex)
                     {
-                        Console.WriteLine("Wrong area!");
+                        Console.WriteLine("Wrong range! Try again!");
                     }
 
-                    #endregion
                 }
             }
             else if (choise.ToUpper() == "NO")

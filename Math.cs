@@ -1,6 +1,6 @@
 ﻿namespace program;
 
-public class Math : IMath
+public class Math : IMath, IRoot
 {
     
     public double add(double f_num, double s_num)
